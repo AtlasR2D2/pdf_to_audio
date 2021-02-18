@@ -20,8 +20,10 @@ with open(pdf_url, "rb") as pdf_file:
         # Scanned Files - Store Text
         output_text = textract.process(pdf_url, method="tesseract", language="eng")
 
+# Show pdf text
 print(output_text)
-# Use google
+
+# Use google text to speech
 output_file = gTTS(text=output_text, lang="en")
 output_file.save("TEST SPEECH.mp3")
 
